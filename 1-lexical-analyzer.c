@@ -37,10 +37,26 @@ bool isNumber(char *token)
 	return true;
 }
 
+bool isEmpty(char *token)
+{
+	int idx = 0;
+	bool isEmpty = true;
+	while (token[idx] != '\0')
+	{
+		if (token[idx] != '\n' && token[idx] != ' ')
+		{
+			isEmpty = false;
+		}
+		idx++;
+	}
+
+	return isEmpty;
+}
+
 bool isDelimiter(char token)
 {
-	char checks[] = {',', ';', '{', '}', ' '};
-	for (int i = 0; i < 5; i++)
+	char checks[] = {',', ';', '{', '}', ' ', ':'};
+	for (int i = 0; i < 6; i++)
 	{
 		if (token == checks[i])
 		{
@@ -63,7 +79,10 @@ char *subStr(char *str, int left, int right)
 
 void checkToken(char *token)
 {
-	if (isNumber(token))
+	if (isEmpty(token))
+	{
+	}
+	else if (isNumber(token))
 	{
 		printf(" Number : %s	 \n", token);
 	}
