@@ -1,7 +1,0 @@
-
-#include <stdio.h>
-
-void main()
-{
-    int a, b, c;    c = a + b; }
-no of single line comment = 2 no of multi line comment = 1 
